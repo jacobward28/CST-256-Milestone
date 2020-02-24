@@ -67,7 +67,6 @@ class JobAdminController extends Controller
             return view('error')->with($data);
         }
     }
-
     // Contains the rules for validating form input for editing jobs
     private function validateEdit(Request $request)
     {
@@ -75,12 +74,13 @@ class JobAdminController extends Controller
             'title' => 'Required | Between:1,20',
             'company' => 'Required | Between:1,45',
             'state' => 'Required | Between:1,20',
-            'city' => 'Required | Between:1,20 | Alpha',
-            'description' => 'Required | Between:1,45 | Alpha'
+            'city' => 'Required | Between:1,20',
+            'description' => 'Required | Between:1,45'
         ];
 
         $this->validate($request, $rules);
     }
+
 
     // Method takes an ID from the form that submitted the request and attempts to delete the job of the corresponding ID
     public function removeJob(Request $request, ILoggerService $logger)

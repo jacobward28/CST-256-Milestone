@@ -1,7 +1,5 @@
 @extends('layouts.appmaster')
 @section('title','Job Posting')
-ssignment was completed in collaboration with Brady Berner, Pengyu Yin
--->
 
 @section('content')
 	<div class="card border-dark" style="width: 70%;margin: auto;margin-top: 20%;">

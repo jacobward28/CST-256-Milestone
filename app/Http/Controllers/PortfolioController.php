@@ -100,7 +100,7 @@ class PortfolioController extends Controller
             'school' => 'Required | Between:4,50',
             'degree' => 'Required | Between:4,45',
             'field' => 'Required | Between:4,45',
-            'gpa' => 'Required | Numeric | Digits_between:2,3',
+            //'gpa' => 'Required | Numeric | Digits_between:2,4',
             'startyear' => 'Required | Numeric | Digits:4',
             'endyear' => 'Required | Numeric | Digits:4'
         ];

@@ -63,35 +63,6 @@
 				@foreach($job as $value)
 					<td>{{$value}}</td>
 				@endforeach
-<!-- 				Bootstrap modal for editing jobs -->
-				<div class="modal fade" id="editModal{{$job['IDJOBS']}}" tabindex="-1" role="dialog" aria-labelledby="{{$job['IDJOBS']}}eLabel" aria-hidden="true">
-  					<div class="modal-dialog" role="document">
-  						<div class="modal-content">
-      						<div class="modal-header">
-        						<h5 class="modal-title" id="ModalLabel">Edit Job</h5>
-        						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          							<span aria-hidden="true">&times;</span>
-        						</button>
-      						</div>
-      						<div class="modal-body">
-<!--       							Form contained within the modal for the actual editing of the jobs -->
-        						<form id="edit{{$job['IDJOBS']}}" action="jobEditHandler" method="post"></form>
-        							<div class="form-group">
-        								<input form="edit{{$job['IDJOBS']}}" type="hidden" name="_token" value="<?php echo csrf_token()?>"/>
-        								<input form="edit{{$job['IDJOBS']}}" type="hidden" name="id" value="{{$job['IDJOBS']}}">
-        								<label class="formLabel" for="title">Title: </label>
-										<input form="edit{{$job['IDJOBS']}}" type="text" class="form-control" id="title" value="{{$job['TITLE']}}" name="title"><br>
-										<label class="formLabel" for="company">Company: </label>
-										<input form="edit{{$job['IDJOBS']}}" type="text" class="form-control" id="company" value="{{$job['COMPANY']}}" name="company"><br>
-										<label class="formLabel" for="state">State: </label>
-										<input form="edit{{$job['IDJOBS']}}" type="text" class="form-control" id="state" value="{{$job['STATE']}}" name="state"><br>
-										<label class="formLabel" for="city">City: </label>
-										<input form="edit{{$job['IDJOBS']}}" type="text" class="form-control" id="city" value="{{$job['CITY']}}" name="city"><br>
-										<label class="formLabel" for="description">Description: </label>
-										<input form="edit{{$job['IDJOBS']}}" type="text" class="form-control" id="description" value="{{$job['DESCRIPTION']}}" name="description"><br>
-									</div>
-      						</div>
-      						<div class="modal-footer">
 		@endforeach
 	</tbody>
 </table>
