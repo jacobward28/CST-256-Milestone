@@ -6,11 +6,12 @@
 rest of the navbar -->
 <form action="userProfile" id="userProfile" style="margin:0px;" method="get"></form>
 <form action="displayJobsHome" id="Jobs" style="margin:0px;" method="get"></form>
+<form action="groups" id="Affinity" style="margin:0px;" method="get"></form>
 <input form="userProfile" type="hidden" name="_token" value="{{csrf_token()}}">
 <input form="userProfile" type="hidden" name="ID" value="{{Session('ID')}}">
 <form action="groups" id="groups" style="margin:0px;" method="get"></form>
-<input form="groups" type="hidden" name="_token" value="{{csrf_token()}}">
-<input form="groups" type="hidden" name="ID" value="{{Session('ID')}}">
+<input form="Affinity" type="hidden" name="_token" value="{{csrf_token()}}">
+<input form="Affinity" type="hidden" name="ID" value="{{Session('ID')}}">
 <!-- Bootstrap navbar that will be included at the top of all pages for the purpose of navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(60, 63, 65); margin-bottom:20px;">
   <a class="navbar-brand" href="home">Home</a>
@@ -28,6 +29,9 @@ rest of the navbar -->
       <li class="nav-item active">
 			<input type="submit" form="Jobs" class="nav-link" style="cursor:pointer; background:none; border:none; width:100% !important;" value="Jobs">
       </li>
+      <li class="nav-item active">
+			<input type="submit" form="Affinity" class="nav-link" style="cursor:pointer; background:none; border:none; width:100% !important;" value="Affinity">
+      </li>      
       <!-- If the currently logged in user is an admin then the admin menu is linked after the user profile -->
       <?php if(session('ROLE')){?>
       <li class="nav-item dropdown">

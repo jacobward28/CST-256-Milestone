@@ -37,6 +37,9 @@ Route::get('/createJob', function() {
     return view('createJob');
 })->middleware('admin');
 
+//Displays a user's affinity groups and suggested affinity groups as long as they're loggedin
+Route::get('/groups', 'AffinityGroupController@index')->middleware('loggedin');
+
 //Gets job data from the database and sends it to the job view
 Route::get('/displayJobsHome', 'JobListingController@index');
 
@@ -45,6 +48,21 @@ Route::post('/viewJob', 'JobController@index');
 
 //Displays a user's affinity groups and suggested affinity groups as long as they're loggedin
 Route::get('/groups', 'AffinityGroupController@index')->middleware('loggedin');
+
+//Takes the user's input for creating a group and passes it to the appropriate controller
+Route::post('/createGroup', 'AffinityGroupController@newGroup');
+
+//Takes the user's input to allow for the editing of an existing owned affinity group
+Route::post('/editGroup', 'AffinityGroupController@editGroup');
+
+//Allows the owner of a group to delete one of their groups
+Route::post('/deleteGroup', 'AffinityGroupController@deleteGroup');
+
+//Allows a user to join an affinity group
+Route::post('/joinGroup', 'AffinityMemberController@joinGroup');
+
+//Allows a user to leave a joined affinity group
+Route::post('/leaveGroup', 'AffinityMemberController@leaveGroup');
 
 //Submits form data to job controller to create new job entry
 Route::post('/newJobHandler', 'JobController@createJob');
